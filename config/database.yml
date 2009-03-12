@@ -1,0 +1,5 @@
+development:
+  adapter: jdbcmysql
+  database: r4rmusic_development
+  username: root
+  password: 
