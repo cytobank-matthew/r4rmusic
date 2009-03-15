@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ComposerControllerTest" tests="1" time="0.12" failures="0" errors="0" assertions="1">
-  <testcase name="test_the_truth" time="0.12" assertions="1">
+<testsuite name="ComposerControllerTest" tests="1" time="0.126" failures="0" errors="0" assertions="1">
+  <testcase name="test_the_truth" time="0.126" assertions="1">
   </testcase>
   <system-out>
     <![CDATA[]]>
