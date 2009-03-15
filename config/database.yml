@@ -1,5 +1,16 @@
-development:
-  adapter: jdbcmysql
-  database: r4rmusic_development
+defaults: &defaults
+  adapter: mysql
   username: root
-  password: 
+  password:
+
+development:
+  <<: *defaults
+  database: r4rmusic_development
+
+test:
+  <<: *defaults
+  database: r4rmusic_test
+
+production:
+  <<: *defaults
+  database: r4rmusic_production
