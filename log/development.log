@@ -1596,3 +1596,146 @@ Rendering work/show
   [4;36;1mComposer Load (1.0ms)[0m   [0;1mSELECT * FROM `composers` WHERE (`composers`.`id` = 1) [0m
   [4;35;1mEdition Load (1.0ms)[0m   [0mSELECT * FROM `editions` WHERE (`editions`.work_id = 1) [0m
 Completed in 124ms (View: 81, DB: 12) | 200 OK [http://localhost/work/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (26.7ms)[0m   [0;1mDROP DATABASE IF EXISTS `r4rmusic_test`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE DATABASE `r4rmusic_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (73.9ms)[0m   [0;1mCREATE TABLE `composers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (202.2ms)[0m   [0;1mCREATE TABLE `editions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `publisher` varchar(255), `year` int(11), `price` float, `created_at` datetime, `updated_at` datetime, `work_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (109.1ms)[0m   [0;1mCREATE TABLE `works` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime, `composer_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (109.2ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (101.8ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310060854')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090310025304')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310025724')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090310025805')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310044046')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (629.9ms)[0m   [0;1mDROP DATABASE IF EXISTS `r4rmusic_test`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE DATABASE `r4rmusic_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (364.4ms)[0m   [0;1mCREATE TABLE `composers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (140.6ms)[0m   [0;1mCREATE TABLE `editions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `publisher` varchar(255), `year` int(11), `price` float, `created_at` datetime, `updated_at` datetime, `work_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (87.5ms)[0m   [0;1mCREATE TABLE `works` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime, `composer_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (98.5ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (104.2ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310060854')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090310025304')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310025724')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090310025805')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310044046')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (81.1ms)[0m   [0;1mDROP DATABASE IF EXISTS `r4rmusic_test`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE DATABASE `r4rmusic_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (70.3ms)[0m   [0;1mCREATE TABLE `composers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (128.0ms)[0m   [0;1mCREATE TABLE `editions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `publisher` varchar(255), `year` int(11), `price` float, `created_at` datetime, `updated_at` datetime, `work_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (97.6ms)[0m   [0;1mCREATE TABLE `works` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime, `composer_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (98.7ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (104.7ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310060854')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090310025304')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310025724')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090310025805')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310044046')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (28.3ms)[0m   [0;1mDROP DATABASE IF EXISTS `r4rmusic_test`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE DATABASE `r4rmusic_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (98.7ms)[0m   [0;1mCREATE TABLE `composers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (203.3ms)[0m   [0;1mCREATE TABLE `editions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `publisher` varchar(255), `year` int(11), `price` float, `created_at` datetime, `updated_at` datetime, `work_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (97.1ms)[0m   [0;1mCREATE TABLE `works` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime, `composer_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (98.6ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (103.6ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310060854')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090310025304')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310025724')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090310025805')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310044046')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (38.0ms)[0m   [0mDROP DATABASE IF EXISTS `r4rmusic_test`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE DATABASE `r4rmusic_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (75.0ms)[0m   [0;1mCREATE TABLE `composers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_bin[0m
+  [4;35;1mSQL (143.0ms)[0m   [0mCREATE TABLE `editions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `publisher` varchar(255), `year` integer(10), `price` float, `created_at` datetime, `updated_at` datetime, `work_id` integer(10)) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_bin[0m
+  [4;36;1mSQL (96.0ms)[0m   [0;1mCREATE TABLE `works` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime, `composer_id` integer(10)) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_bin[0m
+  [4;35;1mSQL (106.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_bin[0m
+  [4;36;1mSQL (113.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310060854')[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090310025304')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310025724')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090310025805')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310044046')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mDROP DATABASE IF EXISTS `r4rmusic_test`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE DATABASE `r4rmusic_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (72.0ms)[0m   [0;1mCREATE TABLE `composers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_bin[0m
+  [4;35;1mSQL (134.0ms)[0m   [0mCREATE TABLE `editions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `publisher` varchar(255), `year` integer(10), `price` float, `created_at` datetime, `updated_at` datetime, `work_id` integer(10)) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_bin[0m
+  [4;36;1mSQL (95.0ms)[0m   [0;1mCREATE TABLE `works` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime, `composer_id` integer(10)) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_bin[0m
+  [4;35;1mSQL (85.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_bin[0m
+  [4;36;1mSQL (103.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310060854')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090310025304')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310025724')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090310025805')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310044046')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (22.0ms)[0m   [0mDROP DATABASE IF EXISTS `r4rmusic_test`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE DATABASE `r4rmusic_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (81.0ms)[0m   [0;1mCREATE TABLE `composers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_bin[0m
+  [4;35;1mSQL (166.0ms)[0m   [0mCREATE TABLE `editions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `publisher` varchar(255), `year` integer(10), `price` float, `created_at` datetime, `updated_at` datetime, `work_id` integer(10)) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_bin[0m
+  [4;36;1mSQL (99.0ms)[0m   [0;1mCREATE TABLE `works` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime, `composer_id` integer(10)) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_bin[0m
+  [4;35;1mSQL (106.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_bin[0m
+  [4;36;1mSQL (103.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310060854')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090310025304')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310025724')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090310025805')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090310044046')[0m
